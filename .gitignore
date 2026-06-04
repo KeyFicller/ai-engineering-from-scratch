@@ -10,6 +10,7 @@ venv/
 dist/
 build/
 .eggs/
+.temp/
 
 .ipynb_checkpoints/
 *.ipynb_metadata/

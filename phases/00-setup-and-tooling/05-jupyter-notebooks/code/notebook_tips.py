@@ -1,5 +1,6 @@
 import time
 import sys
+from pathlib import Path
 
 import numpy as np
 import matplotlib
@@ -44,8 +45,11 @@ def inline_plotting():
     axes[1].set_title("Noise Distribution")
 
     plt.tight_layout()
-    plt.savefig("notebook_plot.png", dpi=100)
-    print("Saved plot to notebook_plot.png")
+    output_dir = Path(__file__).resolve().parents[4] / ".temp"
+    output_dir.mkdir(exist_ok=True)
+    output_path = output_dir / "notebook_plot.png"
+    plt.savefig(output_path, dpi=100)
+    print(f"Saved plot to {output_path}")
     print("In a notebook, plt.show() displays this inline.")
 
 
